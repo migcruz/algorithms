@@ -73,20 +73,23 @@ int main(void){
 
     for (int day = 0; day < 2, day++) {
     	match game;
-    	game.team1 = group1.pop();
-    	game.team2 = group1.pop();
+    	team temp;
+    	vector<team>::iterator it;
+
+
+    	game.team1 = teamList[0];
+    	game.team2 = teamList[1];
 
     	game = playGame(game);
-    	group1.push(game.winner);
-    	group2.push(game.loser);
 
-
-    	game.team1 = group2.pop();
-    	game.team2 = group2.pop();
+    	game.team1 = teamList[2];;
+    	game.team2 = teamList[3];;
 
     	game = playGame(game);
-    	group1.push(game.winner);
-    	group2.push(game.loser);
+    	
+    	temp = teamList[0];
+    	teamList[0] = teamList
+
 
     }
 
