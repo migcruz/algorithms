@@ -63,7 +63,7 @@ private:
 
 int main() {
     stack stringBalancer;
-    string test = "[{}]";
+    string test = "[{}][";
 
     for (string::iterator it = test.begin(); it != test.end(); ++it){
         if (*it == '[' || *it == '(' || *it == '{'){
@@ -72,16 +72,22 @@ int main() {
         }
         else {
             if (stringBalancer.empty()){
-                cout << "FAILED" << endl;
+                cout << "FAILED" << endl; //End bracket is first thing
                 return -1;
             }
             char bracket = stringBalancer.popFront();
-            if ((*it == '(' && bracket != ')') || (*it == '[' && bracket != ']') || (*it == '{' && bracket != '}')){
+            if ((*it == ')' && bracket != '(') || (*it == ']' && bracket != '[') || (*it == '}' && bracket != '{')){
                 cout << "FAILED " << bracket << *it <<endl;
                 return -1;
             }
              cout << "DEQUEUE " << bracket << endl;
         }
+    }
+
+    //Stack should be empty
+    if (!stringBalancer.empty()){
+         cout << "FAILED " << endl;
+         return -1;
     }
 
     cout << "SUCCESS" << endl;
