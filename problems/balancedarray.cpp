@@ -8,6 +8,7 @@ using namespace std;
 
 //Find if array is balanced by accessing each element only once. Balanced means that at an index in the array, the sum of values of lower indices = sum of alues at higher indices than
 //Note that the sum of zero indices is zero so endpoints indices can be solutions. If no index then find the index that has the minimal difference between left and right sums
+// Microsoft
 
 int main(void){
 

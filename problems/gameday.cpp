@@ -6,6 +6,8 @@
 #include <queue>
 
 //4 teams are playing in 3 game days. Make a an algoithm so that at the end of day 3 each team ahs played every other team
+
+//Microsoft
 using namespace std;
 
 struct team{

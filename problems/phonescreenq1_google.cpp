@@ -7,12 +7,13 @@ int main(){
 	string array[5] = {"first", "second", "third", "fourth", "fifth"};
 	string temp;
 	string total;
-	string divider = "|";
+	string newArray[5];
+	string divider = " ";
 
 	// First make a big string
 	for (int i = 0; i < 5; i++){
 		total.append(array[i]);
-		total.append("|");
+		total.append(" ");
 	}
 
 	cout << total << endl;
@@ -21,14 +22,14 @@ int main(){
 	bool stop = false;
 	int index = 0;
 	for (string::iterator it = total.begin(); it != total.end(); ++it){
-		if (*it == '|'){
+		if (*it == ' '){
 			stop = true;
 		}
 		if (not stop){
 			temp.push_back(*it);
 		}
 		else {
-			array[index] = temp;
+			newArray[index] = temp;
 			temp.erase();
 			stop = false;
 			index++;
@@ -37,7 +38,7 @@ int main(){
 	cout << total << endl;
 
 	for (int i = 0; i < 5; i++){
-		cout << array[i] << endl;
+		cout << newArray[i] << endl;
 	}
 
 	return 0;
