@@ -46,9 +46,10 @@ int main(void)
       bzero(buffer,256);
       n = read(connection_fd,buffer,255);
       if (n < 0) printf("ERROR reading from socket");
-         printf("Here is the message: %s\n\n", buffer);
+         printf("Here is the message with %d bytes: %s\n\n", n, buffer);
       strcpy(buffer, "Hi back from the C world"); 
       n = write(connection_fd, buffer, strlen(buffer));
+      printf("Sent %d bytes \n", n );
       if (n < 0) 
          printf("ERROR writing to socket\n");           
       break;      
